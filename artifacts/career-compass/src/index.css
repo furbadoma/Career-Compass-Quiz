@@ -1,0 +1,1119 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-primary-border: var(--sidebar-primary-border);
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-accent-border: var(--sidebar-accent-border);
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* LIGHT MODE */
+:root {
+  --button-outline: rgba(0, 0, 0, 0.1);
+  --badge-outline: rgba(0, 0, 0, 0.05);
+
+  /* Automatic computation of border around primary / danger buttons */
+  --opaque-button-border-intensity: -8; /* In terms of percentages */
+
+  /* Backgrounds applied on top of other backgrounds when hovered/active */
+  --elevate-1: rgba(0, 0, 0, 0.03);
+  --elevate-2: rgba(0, 0, 0, 0.08);
+
+  --background: 210 33% 97%;
+
+  --foreground: 218 39% 19%;
+
+  --border: 211 27% 87%;
+
+  --card: 0 0% 100%;
+
+  --card-foreground: 218 39% 19%;
+
+  --card-border: 211 27% 87%;
+
+  --sidebar: 214 47% 14%;
+
+  --sidebar-foreground: 210 33% 97%;
+
+  --sidebar-border: 214 36% 25%;
+
+  --sidebar-primary: 193 64% 65%;
+
+  --sidebar-primary-foreground: 214 47% 14%;
+
+  --sidebar-accent: 214 36% 25%;
+
+  --sidebar-accent-foreground: 210 33% 97%;
+
+  --sidebar-ring: 193 64% 65%;
+
+  --popover: 0 0% 100%;
+
+  --popover-foreground: 218 39% 19%;
+
+  --popover-border: 211 27% 87%;
+
+  --primary: 213 72% 38%;
+
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 198 47% 92%;
+
+  --secondary-foreground: 214 47% 18%;
+
+  --muted: 210 28% 94%;
+
+  --muted-foreground: 216 19% 45%;
+
+  --accent: 193 64% 65%;
+
+  --accent-foreground: 214 47% 14%;
+
+  --destructive: 2 67% 48%;
+
+  --destructive-foreground: 0 0% 100%;
+
+  --input: 211 27% 87%;
+  --ring: 193 64% 65%;
+  --chart-1: 213 72% 38%;
+  --chart-2: 193 64% 65%;
+  --chart-3: 36 83% 64%;
+  --chart-4: 154 37% 51%;
+  --chart-5: 270 40% 64%;
+
+  --app-font-sans: 'DM Sans', sans-serif;
+  --app-font-serif: 'Fraunces', Georgia, serif;
+  --app-font-mono: 'DM Sans', sans-serif;
+  --radius: 0.9rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0); /*replace with H S L */
+  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0); /*replace with H S L */
+  --shadow-sm:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-md:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-lg:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-xl:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  /* Automatically computed borders - intensity can be controlled by the user by the --opaque-button-border-intensity setting */
+
+  /* Fallback for older browsers */
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(
+    from hsl(var(--sidebar-primary)) h s
+      calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(
+    from hsl(var(--sidebar-accent)) h s
+      calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(
+    from hsl(var(--primary)) h s
+      calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(
+    from hsl(var(--secondary)) h s
+      calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(
+    from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) /
+      alpha
+  );
+
+  /* Fallback for older browsers */
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(
+    from hsl(var(--accent)) h s
+      calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(
+    from hsl(var(--destructive)) h s
+      calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+}
+
+.dark {
+  --button-outline: rgba(255, 255, 255, 0.1);
+  --badge-outline: rgba(255, 255, 255, 0.05);
+
+  --opaque-button-border-intensity: 9; /* In terms of percentages */
+
+  /* Backgrounds applied on top of other backgrounds when hovered/active */
+  --elevate-1: rgba(255, 255, 255, 0.04);
+  --elevate-2: rgba(255, 255, 255, 0.09);
+
+  --background: 214 47% 10%;
+
+  --foreground: 210 33% 97%;
+
+  --border: 214 36% 25%;
+
+  --card: 214 43% 14%;
+
+  --card-foreground: 210 33% 97%;
+
+  --card-border: 214 36% 25%;
+
+  --sidebar: 214 51% 8%;
+
+  --sidebar-foreground: 210 33% 97%;
+
+  --sidebar-border: 214 36% 20%;
+
+  --sidebar-primary: 193 64% 65%;
+
+  --sidebar-primary-foreground: 214 51% 8%;
+
+  --sidebar-accent: 214 36% 20%;
+
+  --sidebar-accent-foreground: 210 33% 97%;
+
+  --sidebar-ring: 193 64% 65%;
+
+  --popover: 214 43% 14%;
+
+  --popover-foreground: 210 33% 97%;
+
+  --popover-border: 214 36% 25%;
+
+  --primary: 193 64% 65%;
+
+  --primary-foreground: 214 51% 8%;
+
+  --secondary: 214 36% 20%;
+
+  --secondary-foreground: 210 33% 97%;
+
+  --muted: 214 36% 20%;
+
+  --muted-foreground: 210 20% 70%;
+
+  --accent: 36 83% 64%;
+
+  --accent-foreground: 214 51% 8%;
+
+  --destructive: 2 67% 56%;
+
+  --destructive-foreground: 0 0% 100%;
+
+  /* Used as the border around inputs. Dark mode: Should be a border that is light enough to have high contrast when rendered on a --card background. More contrast than standard --border */
+  --input: 214 36% 25%;
+  --ring: 193 64% 65%;
+  --chart-1: 193 64% 65%;
+  --chart-2: 36 83% 64%;
+  --chart-3: 154 37% 51%;
+  --chart-4: 270 40% 64%;
+  --chart-5: 213 72% 62%;
+
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-sm:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-md:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-lg:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-xl:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/**
+ * Using the elevate system.
+ * Automatic contrast adjustment.
+ *
+ * <element className="hover-elevate" />
+ * <element className="active-elevate-2" />
+ *
+ * // Using the tailwind utility when a data attribute is "on"
+ * <element className="toggle-elevate data-[state=on]:toggle-elevated" />
+ * // Or manually controlling the toggle state
+ * <element className="toggle-elevate toggle-elevated" />
+ *
+ * Elevation systems have to handle many states.
+ * - not-hovered, vs. hovered vs. active  (three mutually exclusive states)
+ * - toggled or not
+ * - focused or not (this is not handled with these utilities)
+ *
+ * Even without handling focused or not, this is six possible combinations that
+ * need to be distinguished from eachother visually.
+ */
+@layer utilities {
+  /* Hide ugly search cancel button in Chrome until we can style it properly */
+  input[type='search']::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  /* Placeholder styling for contentEditable div */
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  /* .no-default-hover-elevate/no-default-active-elevate is an escape hatch so consumers of
+   * buttons/badges can remove the automatic brightness adjustment on interactions
+   * and program their own. */
+  .no-default-hover-elevate {
+  }
+
+  .no-default-active-elevate {
+  }
+
+  /**
+   * Toggleable backgrounds go behind the content. Hoverable/active goes on top.
+   * This way they can stack/compound. Both will overlap the parent's borders!
+   * So borders will be automatically adjusted both on toggle, and hover/active,
+   * and they will be compounded.
+   */
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    /*border-radius: inherit;   match rounded corners */
+    border-radius: inherit;
+    z-index: -1;
+    /* sits behind content but above backdrop */
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  /* Does not work on elements with overflow:hidden! */
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    /*border-radius: inherit;   match rounded corners */
+    border-radius: inherit;
+    z-index: 999;
+    /* sits in front of content */
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+}
+
+/* Career Compass — calm workbook-inspired visual language */
+:root {
+  --cc-ink: #18324c;
+  --cc-navy: #123451;
+  --cc-blue: #286895;
+  --cc-sky: #dff0f6;
+  --cc-mist: #edf6f8;
+  --cc-paper: #fffdf8;
+  --cc-line: #c9dce5;
+  --cc-teal: #4b9eaa;
+  --cc-coral: #e78870;
+  --cc-gold: #edbf68;
+}
+
+html {
+  min-width: 320px;
+  background: var(--cc-mist);
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background:
+    radial-gradient(circle at 85% 12%, rgba(75, 158, 170, 0.15), transparent 24rem),
+    linear-gradient(130deg, #eef7f8 0%, #f4f8fa 58%, #e8f2f6 100%);
+  color: var(--cc-ink);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--cc-coral);
+  outline-offset: 4px;
+}
+
+.cc-shell {
+  min-height: 100dvh;
+  position: relative;
+  overflow: hidden;
+}
+
+.cc-shell::before {
+  content: '';
+  position: fixed;
+  width: 22rem;
+  height: 22rem;
+  right: -10rem;
+  bottom: -9rem;
+  border: 1px solid rgba(40, 104, 149, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cc-shell::after {
+  content: '';
+  position: fixed;
+  width: 31rem;
+  height: 31rem;
+  left: -25rem;
+  top: 19%;
+  border: 1px solid rgba(40, 104, 149, 0.11);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cc-header {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.45rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.cc-mark {
+  display: inline-flex;
+  gap: 0.7rem;
+  align-items: center;
+  color: var(--cc-navy);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.cc-mark-symbol {
+  width: 2.15rem;
+  height: 2.15rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--cc-blue);
+  border-radius: 0.68rem 0.68rem 0.68rem 0.2rem;
+  color: var(--cc-blue);
+  font-size: 0.86rem;
+  box-shadow: 3px 3px 0 rgba(231, 136, 112, 0.35);
+}
+
+.cc-header-note {
+  color: #628095;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.cc-main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cc-welcome-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 7vw, 6.5rem);
+  align-items: center;
+  min-height: calc(100dvh - 7rem);
+}
+
+.cc-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--cc-blue);
+  font-size: 0.77rem;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.cc-kicker::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background: var(--cc-coral);
+}
+
+.cc-title {
+  margin: 1.2rem 0 1.1rem;
+  color: var(--cc-navy);
+  font-family: var(--app-font-serif);
+  font-size: clamp(3.4rem, 8vw, 6.65rem);
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+  font-weight: 700;
+}
+
+.cc-title em {
+  color: var(--cc-blue);
+  font-style: normal;
+}
+
+.cc-lead {
+  max-width: 31rem;
+  color: #567286;
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  line-height: 1.65;
+}
+
+.cc-actions {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cc-primary-btn,
+.cc-secondary-btn {
+  min-height: 3.15rem;
+  border-radius: 0.65rem;
+  padding: 0.8rem 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.cc-primary-btn {
+  border: 1px solid var(--cc-navy);
+  background: var(--cc-navy);
+  color: #f9fcfc;
+  box-shadow: 4px 4px 0 var(--cc-coral);
+}
+
+.cc-primary-btn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--cc-coral);
+}
+
+.cc-primary-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+  box-shadow: none;
+}
+
+.cc-secondary-btn {
+  border: 1px solid var(--cc-line);
+  background: rgba(255, 253, 248, 0.62);
+  color: var(--cc-blue);
+}
+
+.cc-secondary-btn:hover {
+  background: #fffdf8;
+  border-color: var(--cc-blue);
+}
+
+.cc-microcopy {
+  color: #77909f;
+  font-size: 0.79rem;
+  line-height: 1.5;
+}
+
+.cc-compass-card {
+  min-height: 26rem;
+  border: 1px solid rgba(40, 104, 149, 0.24);
+  border-radius: 1.4rem;
+  background: rgba(255, 253, 248, 0.58);
+  box-shadow: 14px 18px 0 rgba(40, 104, 149, 0.08);
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cc-compass-card::before,
+.cc-compass-card::after {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(40, 104, 149, 0.16);
+  border-radius: 50%;
+}
+
+.cc-compass-card::before {
+  width: 19rem;
+  height: 19rem;
+}
+
+.cc-compass-card::after {
+  width: 13rem;
+  height: 13rem;
+}
+
+.cc-compass-illustration {
+  width: 10.4rem;
+  height: 10.4rem;
+  border: 1px solid var(--cc-blue);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--cc-blue);
+  position: relative;
+  background: rgba(223, 240, 246, 0.7);
+}
+
+.cc-compass-illustration::before,
+.cc-compass-illustration::after {
+  content: '';
+  position: absolute;
+  background: var(--cc-blue);
+  opacity: 0.65;
+}
+
+.cc-compass-illustration::before {
+  height: 1px;
+  width: 140%;
+}
+
+.cc-compass-illustration::after {
+  width: 1px;
+  height: 140%;
+}
+
+.cc-compass-arrow {
+  position: relative;
+  z-index: 1;
+  width: 3.4rem;
+  height: 6.4rem;
+  clip-path: polygon(50% 0%, 100% 100%, 50% 78%, 0% 100%);
+  background: linear-gradient(145deg, var(--cc-coral) 0 50%, var(--cc-blue) 50% 100%);
+  transform: rotate(32deg);
+}
+
+.cc-compass-label {
+  position: absolute;
+  color: #6d8997;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+}
+
+.cc-compass-label.top { top: 2.1rem; }
+.cc-compass-label.bottom { bottom: 2.1rem; }
+.cc-compass-label.left { left: 2.1rem; }
+.cc-compass-label.right { right: 2.1rem; }
+
+.cc-page-heading {
+  max-width: 700px;
+  margin: 0 auto 2.1rem;
+}
+
+.cc-page-heading h1 {
+  margin: 0.95rem 0 0.75rem;
+  color: var(--cc-navy);
+  font-family: var(--app-font-serif);
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.cc-page-heading p {
+  color: #628095;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cc-quiz-card {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: clamp(1.2rem, 4vw, 2.3rem);
+  background: rgba(255, 253, 248, 0.83);
+  border: 1px solid var(--cc-line);
+  border-radius: 1.2rem;
+  box-shadow: 0 18px 35px rgba(24, 50, 76, 0.06);
+}
+
+.cc-quiz-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--cc-blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cc-progress-track {
+  height: 0.42rem;
+  margin: 0.85rem 0 2.2rem;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #dce9ed;
+}
+
+.cc-progress-bar {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--cc-teal);
+  transition: width 320ms ease;
+}
+
+.cc-question {
+  margin: 0 0 1.35rem;
+  color: var(--cc-navy);
+  font-family: var(--app-font-serif);
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.cc-answer-list {
+  display: grid;
+  gap: 0.72rem;
+}
+
+.cc-answer {
+  width: 100%;
+  min-height: 3.8rem;
+  padding: 0.82rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: left;
+  border: 1px solid var(--cc-line);
+  border-radius: 0.72rem;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--cc-ink);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.cc-answer:hover {
+  border-color: #7bb3bf;
+  transform: translateX(3px);
+}
+
+.cc-answer.selected {
+  border-color: var(--cc-teal);
+  background: #e2f3f3;
+  box-shadow: inset 4px 0 0 var(--cc-teal);
+}
+
+.cc-answer-marker {
+  width: 1.65rem;
+  height: 1.65rem;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid #a9c5cf;
+  border-radius: 50%;
+  color: #6b8998;
+  font-size: 0.73rem;
+  font-weight: 700;
+}
+
+.cc-answer.selected .cc-answer-marker {
+  border-color: var(--cc-teal);
+  background: var(--cc-teal);
+  color: #fff;
+}
+
+.cc-quiz-footer {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cc-back-btn {
+  border: 0;
+  background: transparent;
+  color: #648093;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.75rem 0;
+}
+
+.cc-back-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.cc-results-header {
+  max-width: 750px;
+  margin: 0 auto 2.3rem;
+}
+
+.cc-results-header h1 {
+  margin: 0.95rem 0 0.7rem;
+  color: var(--cc-navy);
+  font-family: var(--app-font-serif);
+  font-size: clamp(2.45rem, 6vw, 4.7rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.cc-results-header p {
+  max-width: 46rem;
+  color: #628095;
+  line-height: 1.65;
+}
+
+.cc-results-grid {
+  max-width: 880px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.14fr) minmax(280px, 0.86fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.cc-feature-card {
+  padding: clamp(1.3rem, 4vw, 2rem);
+  border: 1px solid #b9d4db;
+  border-radius: 1.2rem;
+  background: #e4f3f4;
+  position: relative;
+  overflow: hidden;
+}
+
+.cc-feature-card::after {
+  content: '';
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid rgba(75, 158, 170, 0.25);
+  border-radius: 50%;
+  right: -4rem;
+  top: -4rem;
+}
+
+.cc-feature-label {
+  color: #4a858f;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.cc-feature-title {
+  margin: 0.65rem 0 0.8rem;
+  color: var(--cc-navy);
+  font-family: var(--app-font-serif);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.cc-feature-description {
+  max-width: 33rem;
+  color: #4e6e7d;
+  line-height: 1.6;
+}
+
+.cc-secondary-result {
+  margin-top: 1.2rem;
+  padding: 1.2rem 1.3rem;
+  border: 1px solid var(--cc-line);
+  border-radius: 1rem;
+  background: rgba(255, 253, 248, 0.82);
+}
+
+.cc-secondary-result h2 {
+  margin: 0.45rem 0 0.35rem;
+  color: var(--cc-navy);
+  font-family: var(--app-font-serif);
+  font-size: 1.35rem;
+}
+
+.cc-secondary-result p {
+  margin: 0;
+  color: #668190;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.cc-score-card {
+  padding: 1.35rem;
+  border: 1px solid var(--cc-line);
+  border-radius: 1.2rem;
+  background: rgba(255, 253, 248, 0.78);
+}
+
+.cc-score-card h2 {
+  margin: 0 0 0.35rem;
+  color: var(--cc-navy);
+  font-family: var(--app-font-serif);
+  font-size: 1.45rem;
+}
+
+.cc-score-note {
+  margin: 0 0 1.3rem;
+  color: #718a98;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.cc-score-row {
+  margin-top: 1.05rem;
+}
+
+.cc-score-row:first-of-type {
+  margin-top: 0;
+}
+
+.cc-score-row-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+  color: #47677a;
+  font-size: 0.79rem;
+  line-height: 1.3;
+}
+
+.cc-score-row-top strong {
+  color: var(--cc-blue);
+  white-space: nowrap;
+}
+
+.cc-score-track {
+  height: 0.38rem;
+  margin-top: 0.45rem;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #e4ecef;
+}
+
+.cc-score-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--cc-blue);
+  transition: width 450ms ease;
+}
+
+.cc-score-row.leading .cc-score-fill {
+  background: var(--cc-coral);
+}
+
+.cc-results-actions {
+  max-width: 880px;
+  margin: 1.8rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cc-honesty-note {
+  max-width: 29rem;
+  margin: 2rem auto 0;
+  color: #6a8492;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .cc-header {
+    padding: 1.1rem 1rem;
+  }
+
+  .cc-header-note {
+    display: none;
+  }
+
+  .cc-main {
+    padding: 1.3rem 1rem 3.5rem;
+  }
+
+  .cc-welcome-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+  }
+
+  .cc-title {
+    font-size: clamp(3.6rem, 18vw, 5.4rem);
+  }
+
+  .cc-compass-card {
+    min-height: 17rem;
+    order: -1;
+  }
+
+  .cc-compass-card::before { width: 14rem; height: 14rem; }
+  .cc-compass-card::after { width: 10rem; height: 10rem; }
+  .cc-compass-illustration { width: 7.2rem; height: 7.2rem; }
+  .cc-compass-arrow { width: 2.5rem; height: 4.6rem; }
+  .cc-compass-label.top { top: 1.3rem; }
+  .cc-compass-label.bottom { bottom: 1.3rem; }
+  .cc-compass-label.left { left: 1.3rem; }
+  .cc-compass-label.right { right: 1.3rem; }
+
+  .cc-results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cc-results-actions,
+  .cc-quiz-footer {
+    align-items: stretch;
+  }
+
+  .cc-results-actions {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

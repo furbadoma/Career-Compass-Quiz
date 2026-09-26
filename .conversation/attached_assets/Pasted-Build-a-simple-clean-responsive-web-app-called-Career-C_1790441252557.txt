@@ -1,0 +1,171 @@
+Build a simple, clean, responsive web app called **Career Compass**.
+
+### Purpose
+
+Career Compass is an 8-question career-interest quiz. It should help users explore broad career directions based on their interests. It is NOT a career prediction or professional assessment.
+
+### Career directions
+
+Use these 8 directions:
+
+1. Business & Entrepreneurship
+2. Technology & Engineering
+3. Science & Research
+4. Creative & Design
+5. People & Communication
+6. Health & Wellbeing
+7. Law, Government & Society
+8. Environment & Sustainability
+
+### Questions
+
+**Question 1: Which project sounds most interesting?**
+
+* Start a small business → Business
+* Build an app → Technology
+* Research how something works → Science
+* Create a design or video → Creative
+
+**Question 2: Which activity would you enjoy most?**
+
+* Help someone improve their health → Health
+* Debate an important issue → Law
+* Build or fix something → Technology
+* Teach or talk with people → People
+
+**Question 3: What would you choose for a free afternoon?**
+
+* Run an experiment → Science
+* Plan a business idea → Business
+* Create something → Creative
+* Learn about nature or climate → Environment
+
+**Question 4: Which problem would you like to solve?**
+
+* Make technology better → Technology
+* Improve people's health → Health
+* Help a business grow → Business
+* Improve society or government → Law
+
+**Question 5: Which activity sounds most interesting?**
+
+* Design a brand or website → Creative
+* Study science or mathematics → Science
+* Organize people for a project → People
+* Solve an environmental problem → Environment
+
+**Question 6: Which future sounds most exciting?**
+
+* Discover something new → Science
+* Build a company → Business
+* Create products or media → Creative
+* Teach or communicate with people → People
+
+**Question 7: Which skill would you like to learn?**
+
+* Programming or robotics → Technology
+* Law or public policy → Law
+* Health or psychology → Health
+* Environmental technology → Environment
+
+**Question 8: What kind of impact would you like to make?**
+
+* Create things people enjoy → Creative
+* Discover new knowledge → Science
+* Solve real-world problems with technology → Technology
+* Help people or communities → People
+
+### Required features
+
+Create these screens:
+
+1. **Welcome screen**
+
+   * Career Compass title
+   * Short explanation
+   * "Start Quiz" button
+
+2. **Quiz screen**
+
+   * Show one question at a time
+   * Four answer choices
+   * Progress indicator such as "Question 3 of 8"
+   * Progress bar
+   * Back button
+   * Next button
+   * User must select an answer before continuing
+
+3. **Results screen**
+
+   * Show the user's strongest career direction
+   * Show a short description
+   * Show a second direction to explore
+   * Show the scores for all 8 directions
+   * Include a "Take Quiz Again" button
+
+### Scoring
+
+Each selected answer gives 1 point to its assigned career direction.
+
+Do NOT tell users that the result determines their career.
+
+Use wording such as:
+
+"Your strongest career direction is..."
+
+and:
+
+"You may enjoy..."
+
+### Important scoring requirement
+
+The current questions do not give every career direction exactly the same number of answer opportunities. Do not display misleading scores such as "3/8" for every category.
+
+Either:
+
+* normalize the scores appropriately, OR
+* clearly display the relative results without pretending every category has the same maximum.
+
+Also handle ties sensibly. If two directions have the same highest score, do not arbitrarily claim that one is definitively better.
+
+### Design
+
+Make the design:
+
+* clean
+* modern
+* simple
+* professional
+* mobile-friendly
+* easy for young users to understand
+* not overly colorful
+* good spacing
+* large readable buttons
+* clear progress bar
+
+Use a simple blue-based visual style for the first version.
+
+### Technical requirements
+
+Use a simple web stack:
+
+* HTML
+* CSS
+* JavaScript
+
+Keep the code organized and beginner-friendly.
+
+Do not require a backend for the first version.
+
+Do not add login, payment, AI, or unnecessary features.
+
+Make sure the complete quiz works from start to finish before adding extra features.
+
+After creating it, explain:
+
+1. Which files were created
+2. Where the quiz questions are stored
+3. Where the scoring logic is
+4. How I can change a question later
+5. How I can change colors/design
+6. How I can publish the website and get a shareable link
